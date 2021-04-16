@@ -71,3 +71,18 @@ driver.find_element_by_css_selector('select#nr>option:nth-child(3)').click()
 
 #css同时匹配两个属性
 driver.find_element_by_css_selector('input#kw[name="wd"]').send_keys("python")
+
+#定位参数化
+'''
+by_id= "id"
+by_xpath = "xpath"
+by_link_text = "link text"
+by_partial_text = "partial link text"
+by_name = "name"
+by_tag_name = "tag name"
+by_class_name = "class name"
+by_css_selector = "css selector"
+'''
+
+driver.find_element("id","kw").clear()
+driver.find_element("css selector",".s-tab-zhidao").click()

@@ -4,7 +4,7 @@ import time
 from selenium.webdriver.common.action_chains import ActionChains
 
 #登录函数
-def login(mobile,password):
+def login(driver,mobile,password):
     # 打开aliyun32网址
     driver.get("http://aliyun.32.cn")
     driver.implicitly_wait(5)
@@ -25,7 +25,7 @@ def login(mobile,password):
     driver.find_element_by_css_selector("[placeholder='请输入密码']").send_keys(password)
     #点击登录
     driver.find_element_by_css_selector(".primary.v-btn > .v-btn__content").click()
-    time.sleep(20)
+    time.sleep(10)
 #登出函数
 def logout():
     #定位用户名元素位置
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     #启动浏览器
     driver = webdriver.Chrome()
     #调用登录函数
-    login("15658678027","123456dbb")
+    login(driver,"15658678027","123456dbb")
     # 验证登录是否成功
     t = driver.find_element_by_xpath("//p[@class='fs16 textover']").text
     if t == "Hi，奥斯特洛夫斯基":
